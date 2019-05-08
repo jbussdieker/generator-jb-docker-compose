@@ -7,7 +7,9 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the exquisite ${chalk.red('generator-jb-docker-compose')} generator!`)
+      yosay(
+        `Welcome to the exquisite ${chalk.red('generator-jb-docker-compose')} generator!`
+      )
     );
 
     const prompts = [
