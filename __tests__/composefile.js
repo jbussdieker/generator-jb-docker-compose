@@ -5,9 +5,11 @@ const helpers = require('yeoman-test');
 
 describe('generator-jb-docker-compose:composefile', () => {
   beforeAll(() => {
-    return helpers
-      .run(path.join(__dirname, '../generators/composefile'))
-      .withOptions({ configVersion: '3.7', serviceName: 'foo', imageName: 'ubuntu' });
+    return helpers.run(path.join(__dirname, '../generators/composefile')).withOptions({
+      configVersion: '3.7',
+      serviceName: 'webapp',
+      imageName: 'ubuntu'
+    });
   });
 
   it('creates files', () => {

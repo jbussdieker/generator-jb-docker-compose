@@ -14,10 +14,22 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'input',
+        name: 'configVersion',
+        message: 'What config file version would you like to use?',
+        default: '3.7'
+      },
+      {
+        type: 'input',
+        name: 'serviceName',
+        message: 'What would you like to name the service?',
+        default: 'webapp'
+      },
+      {
+        type: 'input',
+        name: 'imageName',
+        message: 'What docker image name would you like to use?',
+        default: 'ubuntu'
       }
     ];
 
@@ -27,14 +39,9 @@ module.exports = class extends Generator {
     });
   }
 
-  writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
-  }
-
-  install() {
-    this.installDependencies();
+  default() {
+    this.composeWith(require.resolve('../composefile'), {
+      ...this.props
+    });
   }
 };
