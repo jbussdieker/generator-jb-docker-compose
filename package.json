@@ -1,6 +1,6 @@
 {
   "name": "generator-jb-docker-compose",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docker Compose project generator",
   "homepage": "https://github.com/jbussdieker/generator-jb-docker-compose",
   "author": {
