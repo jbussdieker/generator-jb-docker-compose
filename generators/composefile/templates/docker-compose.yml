@@ -1,0 +1,11 @@
+version: "<%= configVersion %>"
+services:
+  <%= serviceName %>:
+<% if (imageName) { -%>
+    image: <%= imageName %>
+<% } else { %>
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: {}
+<% } %>
