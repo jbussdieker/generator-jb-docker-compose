@@ -9,8 +9,4 @@ module.exports = class extends Generator {
       { ...this.options }
     );
   }
-
-  install() {
-    this.installDependencies();
-  }
 };
